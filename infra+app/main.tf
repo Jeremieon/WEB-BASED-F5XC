@@ -91,7 +91,11 @@ resource "aws_instance" "myEc2-instance" {
   }
 }
 
-provisioner "file" {
-    content     = var.tf_cloud_organization["ssh_key"]
-    destination = "/home/ubuntu/.ssh/authorized_keys"
+provisioner "remote-exec" {
+    inline = [
+      "mkdir -p /home/ubuntu/.ssh",
+      "echo '${var.tf_cloud_organization["ssh_key"]}' > /home/ubuntu/.ssh/authorized_keys",
+      "chmod 600 /home/ubuntu/.ssh/authorized_keys",
+      "chown -R ubuntu:ubuntu /home/ubuntu/.ssh"
+    ]
   }

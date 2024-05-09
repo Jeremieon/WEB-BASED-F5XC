@@ -81,7 +81,7 @@ resource "aws_security_group" "my_app_sg" {
 resource "aws_instance" "myEc2-instance" {
   ami = var.ami  
   instance_type = var.instance_type
-  key_name      = var.tf_cloud_organization["ssh_key"]
+  key_name      = tf_cloud_organization["ssh_key"]
   subnet_id = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.my_app_sg.id]
   user_data = var.user_data

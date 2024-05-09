@@ -30,7 +30,7 @@ jobs:
             cloud {
                 organization = "${{ secrets.TF_CLOUD_ORGANIZATION }}"
                 workspaces {
-                name = "${{ secrets.TF_EC2APP_WORKSPACE }}"
+                name = "${{ secrets.TF_CLOUD_WORKSPACE_AUTO_WORKSPACE }}"
                 }
             }
         }

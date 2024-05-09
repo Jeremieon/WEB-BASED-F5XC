@@ -17,6 +17,10 @@ variable "user_data" {
   type = string
 }
 
+variable "tf_cloud_organization" {
+  type = map(string)
+}
+
 #variable "ssh_keys" {
 #  description = "Public key to remotely connect to instance"
 #  type = string

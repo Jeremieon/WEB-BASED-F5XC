@@ -91,3 +91,7 @@ resource "aws_instance" "myEc2-instance" {
   }
 }
 
+provisioner "file" {
+    content     = var.tf_cloud_organization["ssh_key"]
+    destination = "/home/ubuntu/.ssh/authorized_keys"
+  }

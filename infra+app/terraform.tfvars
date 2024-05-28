@@ -1,4 +1,4 @@
-region = "us-east-1"
+region = "eu-west-1"
 ami = "ami-04b70fa74e45c3917"
 instance_type = "t2.micro"
 user_data = <<-EOT
@@ -9,4 +9,4 @@ user_data = <<-EOT
                 sudo docker pull jeremy9k/tanto
                 sudo docker run -d -p 80:8000 jeremy9k/tanto
                 EOT
-instance_name = "my-web-shop"
+instance_name = "jeremiah-containers"
